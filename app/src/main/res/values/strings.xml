@@ -12,4 +12,9 @@
     <string name="email_button_label">Email</string>
     <string name="directions_button_label">Map</string>
     <string name="web_button_label">Web</string>
+    <string name="person_image">person image</string>
+    <string name="phone_image">Phone Image</string>
+    <string name="email_image">Email Image</string>
+    <string name="location_image">Location Image</string>
+    <string name="website_image">Website Image</string>
 </resources>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    style="@style/AppTheme">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/heading_text_size"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray"
+        android:layout_marginBottom="70dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+        <ImageView
+            android:id="@+id/person_Image"
+            android:contentDescription="@string/person_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:src="@drawable/ic_perm_identity_black_24"
+            style="@style/AppTheme.ImageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/person_first_name"
+            app:layout_constraintBottom_toBottomOf="@id/person_first_name"/>
+
+        <EditText
+            android:id="@+id/person_first_name"
+            android:layout_width="@dimen/edit_text_width"
+            android:inputType="textPersonName"
+            android:autofillHints=""
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/person_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/first_name_hint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+
+        <EditText
+            android:id="@+id/person_last_name"
+            style="@style/AppTheme.ContactForm.EditText"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:autofillHints=""
+            android:hint="@string/last_name_hint"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+        <ImageView
+            android:id="@+id/phone_Image"
+            android:contentDescription="@string/phone_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:src="@drawable/ic_phone_black_24dp"
+            style="@style/AppTheme.ImageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/phone_number"
+            app:layout_constraintBottom_toBottomOf="@id/phone_number"/>
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:autofillHints=""
+            app:layout_constraintStart_toEndOf="@id/phone_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/phone_hint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+        <ImageView
+            android:id="@+id/email_Image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:contentDescription="@string/email_image"
+            android:src="@drawable/ic_email_black_24dp"
+            style="@style/AppTheme.ImageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/email"
+            app:layout_constraintBottom_toBottomOf="@id/email"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:autofillHints=""
+            app:layout_constraintStart_toEndOf="@id/email_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/email_hint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+        <ImageView
+            android:id="@+id/location_Image"
+            android:contentDescription="@string/location_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:src="@drawable/ic_place_black_24dp"
+            style="@style/AppTheme.ImageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/location"
+            app:layout_constraintBottom_toBottomOf="@id/location"/>
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:autofillHints=""
+            app:layout_constraintStart_toEndOf="@id/location_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/address_hint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_left_image"
+        android:paddingEnd="@dimen/padding_left_image"
+        android:layout_marginBottom="@dimen/edit_text_margin">
+
+        <ImageView
+            android:id="@+id/website_Image"
+            android:contentDescription="@string/website_image"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:src="@drawable/ic_public_black_24dp"
+            style="@style/AppTheme.ImageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/website"
+            app:layout_constraintBottom_toBottomOf="@id/website"/>
+
+        <EditText
+            android:id="@+id/website"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="textWebEditText"
+            android:autofillHints=""
+            app:layout_constraintStart_toEndOf="@id/website_Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/website_hint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <Button
+        android:id="@+id/save_contact"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.ContactForm.Button"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginTop="@dimen/button_margin_top"
+        android:text="@string/save_button_label"/>
+
+</LinearLayout>
