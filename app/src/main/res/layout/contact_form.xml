@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,30 +8,20 @@
     android:padding="16dp"
     style="@style/AppTheme">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="@dimen/heading_text_size"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorLightGray"
-        android:layout_marginBottom="70dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/padding_left_image"
         android:paddingEnd="@dimen/padding_left_image"
-        android:layout_marginBottom="@dimen/edit_text_margin">
+        android:layout_marginBottom="@dimen/edit_text_margin"
+        android:layout_marginTop="75dp">
 
         <ImageView
             android:id="@+id/person_Image"
             android:contentDescription="@string/person_image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_perm_identity_black_24"
             style="@style/AppTheme.ImageView"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -82,14 +73,14 @@
 
         <ImageView
             android:id="@+id/phone_Image"
-            android:contentDescription="@string/phone_image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
-            android:src="@drawable/ic_phone_black_24dp"
             style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/phone_image"
+            android:src="@drawable/ic_phone_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/phone_number"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/phone_number"
-            app:layout_constraintBottom_toBottomOf="@id/phone_number"/>
+            app:layout_constraintTop_toTopOf="@id/phone_number" />
 
         <EditText
             android:id="@+id/phone_number"
@@ -113,8 +104,8 @@
 
         <ImageView
             android:id="@+id/email_Image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/email_image"
             android:src="@drawable/ic_email_black_24dp"
             style="@style/AppTheme.ImageView"
@@ -144,14 +135,14 @@
 
         <ImageView
             android:id="@+id/location_Image"
-            android:contentDescription="@string/location_image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
-            android:src="@drawable/ic_place_black_24dp"
             style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/location_image"
+            android:src="@drawable/ic_place_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/location"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/location"
-            app:layout_constraintBottom_toBottomOf="@id/location"/>
+            app:layout_constraintTop_toTopOf="@id/location" />
 
         <EditText
             android:id="@+id/location"
@@ -175,14 +166,14 @@
 
         <ImageView
             android:id="@+id/website_Image"
-            android:contentDescription="@string/website_image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
-            android:src="@drawable/ic_public_black_24dp"
             style="@style/AppTheme.ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/website_image"
+            android:src="@drawable/ic_public_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/website"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/website"
-            app:layout_constraintBottom_toBottomOf="@id/website"/>
+            app:layout_constraintTop_toTopOf="@id/website" />
 
         <EditText
             android:id="@+id/website"
@@ -196,14 +187,15 @@
             android:hint="@string/website_hint"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
     <Button
         android:id="@+id/save_contact"
+        style="@style/AppTheme.ContactForm.Button"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
-        style="@style/AppTheme.ContactForm.Button"
         android:layout_marginStart="@dimen/button_margin"
         android:layout_marginTop="@dimen/button_margin_top"
-        android:text="@string/save_button_label"/>
+        android:onClick="onButtonClick"
+        android:text="@string/save_button_label" />
 
 </LinearLayout>

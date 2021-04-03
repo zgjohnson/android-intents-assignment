@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    style="@style/AppTheme">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="100dp">
+
+        <ImageView
+            android:id="@+id/contact_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/contact_photo"
+            app:layout_constraintStart_toStartOf="@id/contact_photo"
+            app:layout_constraintTop_toBottomOf="@id/contact_photo" />
+
+        <HorizontalScrollView
+            android:id="@+id/chip_group_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_name">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_left_image"
+                android:paddingEnd="10dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/call_chip"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCallClick"
+                    android:text="@string/call_button_label"
+                    app:chipIcon="@drawable/ic_phone_black_24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/text_chip"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onSMSClick"
+                    android:text="@string/text_button_label"
+                    app:chipIcon="@drawable/ic_textsms_black_24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/email_chip"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onEmailClick"
+                    android:text="@string/email_button_label"
+                    app:chipIcon="@drawable/ic_email_black_24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/location_chip"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onMapsClick"
+                    android:text="@string/directions_button_label"
+                    app:chipIcon="@drawable/ic_directions_black_24dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/web_chip"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onWebsiteClick"
+                    android:text="@string/web_button_label"
+                    app:chipIcon="@drawable/ic_public_black_24dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/call_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/edit_text_margin"
+            android:paddingStart="@dimen/padding_left_image"
+            android:paddingEnd="@dimen/padding_left_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_scroll">
+
+            <ImageView
+                android:id="@+id/call_Image"
+                style="@style/AppTheme.ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/phone_image"
+                android:src="@drawable/ic_phone_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/phone_number_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/phone_number_view" />
+
+            <TextView
+                android:id="@+id/phone_number_view"
+                style="@style/AppTheme.ContactInfo.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_left_image"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/call_Image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorDarkGray"
+                app:layout_constraintLeft_toLeftOf="@id/phone_number_view"
+                app:layout_constraintTop_toBottomOf="@id/phone_number_view" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/email_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/edit_text_margin"
+            android:paddingStart="@dimen/padding_left_image"
+            android:paddingEnd="@dimen/padding_left_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/call_constraint">
+
+            <ImageView
+                android:id="@+id/email_display_Image"
+                style="@style/AppTheme.ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/email_image"
+                android:src="@drawable/ic_email_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/email_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/email_view" />
+
+            <TextView
+                android:id="@+id/email_view"
+                style="@style/AppTheme.ContactInfo.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_left_image"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/email_display_Image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorDarkGray"
+                app:layout_constraintLeft_toLeftOf="@id/email_view"
+                app:layout_constraintTop_toBottomOf="@id/email_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/location_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/edit_text_margin"
+            android:paddingStart="@dimen/padding_left_image"
+            android:paddingEnd="@dimen/padding_left_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_constraint">
+
+            <ImageView
+                android:id="@+id/location_display_Image"
+                style="@style/AppTheme.ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/location_image"
+                android:src="@drawable/ic_place_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/location_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_view" />
+
+            <TextView
+                android:id="@+id/location_view"
+                style="@style/AppTheme.ContactInfo.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_left_image"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/location_display_Image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorDarkGray"
+                app:layout_constraintLeft_toLeftOf="@id/location_view"
+                app:layout_constraintTop_toBottomOf="@id/location_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/web_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/edit_text_margin"
+            android:paddingStart="@dimen/padding_left_image"
+            android:paddingEnd="@dimen/padding_left_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/location_constraint">
+
+            <ImageView
+                android:id="@+id/website_display_Image"
+                style="@style/AppTheme.ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/website_image"
+                android:src="@drawable/ic_public_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/website_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/website_view" />
+
+            <TextView
+                android:id="@+id/website_view"
+                style="@style/AppTheme.ContactInfo.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_left_image"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/website_display_Image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorDarkGray"
+                app:layout_constraintLeft_toLeftOf="@id/website_view"
+                app:layout_constraintTop_toBottomOf="@id/website_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
